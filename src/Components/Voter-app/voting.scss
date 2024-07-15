@@ -1,0 +1,193 @@
+@import '../../styles/vars.scss';
+.voting-container {
+    width: 70vw;
+    background: $bg;
+    border-radius: 4px;
+    margin-top: 100px;
+    padding: 30px 60px;
+    box-sizing: border-box;
+    position: relative;
+
+    .active-question-no {
+        font-size: 32px;
+        font-weight: 500;
+        color: $primary;
+    }
+
+    .total-question {
+        font-size: 16px;
+        font-weight: 500;
+        color: $disabled;
+    }
+
+    h2 {
+        font-size: 28px;
+        font-weight: 500;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 26px;
+    }
+
+    ul {
+        margin-top: 20px;
+        margin-left: -40px;
+
+        li {
+           text-decoration: none;
+            list-style: none;
+            color: $foreground;
+            font-size: 16px;
+            background: $bg;
+            border: 1px solid $disabled;
+            border-radius: 16px;
+            padding: 11px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .selected-answer {
+            background: $primary;
+            border: 1px solid $accent;
+            color: $bg;
+        }
+
+        /* Add a class to the image buttons you want to apply the glowing effect */
+        .image-button {
+            /* Set the initial box shadow to none */
+            box-shadow: none;
+            /* Add a transition to create a smooth effect */
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        /* Apply the glowing effect when hovering over the image button */
+        .image-button:hover {
+            /* Add a box shadow with a glowing effect */
+            box-shadow: 0 0 10px 5px #3498db;
+        }
+
+    }
+
+    .footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    button {
+        background: linear-gradient(0deg, $primary 003%, $accent);
+        border-radius: 9px;
+        font-size: 26px;
+        color: $bg;
+        padding: 10px 42px;
+        border: none;
+        outline: none;
+        margin-top: 15px;
+        cursor: pointer;
+
+        &:disabled {
+            background: $bg-accent;
+            color: $disabled;
+            cursor: not-allowed;
+        }
+
+        button:hover {
+            /* Animation for the glowing effect */
+            animation: glowing 1.5s infinite;
+        }
+
+        @keyframes glowing {
+            0% {
+                box-shadow: 0 0 5px #3498db;
+            }
+
+            50% {
+                box-shadow: 0 0 20px #3498db, 0 0 40px #3498db;
+            }
+
+            100% {
+                box-shadow: 0 0 5px #3498db;
+            }
+        }
+    }
+
+    .result {
+        text-align: center;
+
+        h3 {
+            font-size: 24px;
+            letter-spacing: 1.4px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 24px;
+            font-weight: bold;
+
+            span {
+                color: $primary;
+                font-size: 22px;
+            }
+        }
+
+        .select-lang {
+            font-weight: bold;
+            display: inline-block;
+        }
+    }
+
+    input {
+        border: 1px solid $disabled;
+        border-radius: 4px;
+        padding: 10px 20px;
+        width: 100%;
+        margin-top: 20px;
+        box-sizing: border-box;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .image-button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+      
+      .image-button-row {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 50px;
+      }
+      
+      .image-button {
+        /* Set the initial box shadow to none */
+        box-shadow: none;
+        /* Add a transition to create a smooth effect */
+        transition: box-shadow 0.3s ease-in-out;
+      }
+      
+      /* Apply the glowing effect when hovering over the image button */
+      .image-button:hover {
+        /* Add a box shadow with a glowing effect */
+        box-shadow: 0 0 10px 5px #3498db;
+      }
+      
+      .image-button img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 2px solid $disabled;
+        padding: 5px;
+        cursor: pointer;
+      }
+      
+      .image-button:hover img {
+        box-shadow: 0 0 10px 5px #3498db;
+      }
+}
